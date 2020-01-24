@@ -1,2 +1,4 @@
 # Project2020
-#112233445566778899
+#project purposition
+    1. use to tenserflow
+    2. operate to use docker & AWS
