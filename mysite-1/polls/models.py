@@ -1,5 +1,5 @@
 from django.db import models
-
+from datetime
 # Create your models here.
 
 class Question(models.Model):
@@ -8,6 +8,10 @@ class Question(models.Model):
     
     def __str__(self): # 주소값이 아니라 텍스트 값을 출력함
         return self.question_text
+    
+    def was_published_recently(self):
+        return self.pub_date >= timezone.now() - datetime.now() - datetime.timedelta(days=1)
+    
 
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE) 
