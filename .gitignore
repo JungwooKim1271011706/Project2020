@@ -19,3 +19,6 @@ mysite/blog/migrations
 mysite/mysite/__pycache__
 mysite/db.sqlite3
 mysite-1/db.sqlite3
+mysite-1/polls/__pycache__/models.cpython-37.pyc
+mysite-1/polls/__pycache__/tests.cpython-37.pyc
+mysite-1/polls/__pycache__/views.cpython-37.pyc
