@@ -1,10 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from .models import Post, Comment
-from django.shortcuts import render, get_object_or_404
 from .forms import PostForm, CommentForm
-from django.shortcuts import redirect
 from django.views import generic
+from django.views.generic.edit import FormView
+from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 
 # Create your views here
@@ -18,6 +18,10 @@ class Post_list(generic.ListView):
     def get_queryset(self):
         return Post.objects.all()
 
+# class Post_detail(generic.DetailView):
+#     template_name='blog/post_detail.html'
+#     context_object_name = 'Post'
+#     queryset = Post.objects.all()
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)

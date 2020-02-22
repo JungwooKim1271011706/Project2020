@@ -4,6 +4,8 @@ from django.utils import timezone
 
 
 class Post(models.Model):
+    comments = models.Manager() #에러 제거
+    objects = models.Manager() #에러 제거
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = models.TextField()
@@ -19,12 +21,17 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    def approved_comments(self):
+    def approved_comments(self): #Post 1, 2, 3, etc에 해당하는 승인된 코멘트의 수를 표시하기 위해서 존재
         return self.comments.filter(approved_comment=True)
 
+    def approved_comments_counts(self):
+        return len(self.comments.filter(approved_comment=True))
+    
+
+    
 
 class Comment(models.Model):
-    post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     author = models.CharField(max_length=200)
     text = models.TextField()
     created_date=models.DateTimeField(default=timezone.now)
@@ -36,4 +43,5 @@ class Comment(models.Model):
         
     def __str__(self):
         return self.text
+
 
