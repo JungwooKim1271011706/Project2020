@@ -12,8 +12,8 @@ from django.contrib.auth.decorators import login_required
 #     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
 #     return render(request, 'blog/post_list.html', {'posts':posts})
 
-class Post_list(generic.ListView):
-    template_name = 'blog/post_list.html' #템플릿 이름
+class Index(generic.ListView):
+    template_name = 'blog/index.html' #템플릿 이름
     context_object_name = 'posts'
     def get_queryset(self):
         return Post.objects.all()
@@ -68,7 +68,7 @@ def post_publish(request, pk):
 def post_remove(requset, pk):
     post=get_object_or_404(Post, pk=pk)
     post.delete()
-    return redirect('post_list')
+    return redirect('index')
 
 def add_comment_to_post(request, pk):
     post = get_object_or_404(Post, pk=pk)

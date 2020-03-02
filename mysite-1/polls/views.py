@@ -4,13 +4,16 @@ from django.urls import reverse
 from polls.models import Question, Choice
 from django.views import generic
 from django.utils import timezone
+import logging
+logger = logging.getLogger(__name__)
+
 
 # Create your views here.
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
     context_object_name = 'latest_question_list'
     # queryset = Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
-    def get_queryset(self):
+    def get_queryset(self): #오버라이딩>>모델의 테이블에서 원하는 값을 리스트로 변경
         return Question.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
 # def index(request):
@@ -30,6 +33,7 @@ class DetailView(generic.DetailView):
 #     return render(request, 'polls/detail.html', {'question':question})
 
 def vote(request, question_id):
+    logger.debug("vote().question_id: %s" % question_id)
     question = get_object_or_404(Question, pk=question_id)
     try:
         selected_choice = question.choice_set.get(pk=request.POST['choice'])
@@ -50,6 +54,3 @@ class ResultsView(generic.DetailView):
 # def results(request, question_id):
 #     question = get_object_or_404(Question, pk=question_id)
 #     return render(request, 'polls/results.html', {'question':question})
-
-
-
