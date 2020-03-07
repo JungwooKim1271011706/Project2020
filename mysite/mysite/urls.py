@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from mysite import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')),
+    path('', views.HomeView.as_view(), name='home'),
+    path('polls/', include('polls.urls')),
+    path('books/', include('books.urls')),
+    path('blog/', include('blog.urls')),
     path('accounts/', include('django.contrib.auth.urls')), #로그아웃 페이지 일관되지 않음.
 ]

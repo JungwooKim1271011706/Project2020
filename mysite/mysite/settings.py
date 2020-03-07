@@ -28,23 +28,25 @@ STATIC_ROOT = os.path.join(ROOT_DIR, '.static_root')
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'zoi(2_96s)35b1@c+o(bco9rmke+)f!h9hl&0f73*2rt*w#9xx'
+SECRET_KEY = 'abnfqrwmmeshj-w_j&jj5rgnr6_#=!)#r7a=d6-isd0fwq#%$1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+<<<<<<< HEAD
 ALLOWED_HOSTS = [u'*', u'mecha.com']
-
 
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'books',
     'blog',
 ]
 
@@ -63,7 +65,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,5 +129,34 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-LOGIN_REDIRECT_URL = '/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "blog"),
+# ]
+
+
+#로그메시지 기록
+LOGGING = {
+    'version' : 1,
+    'disable_existing_loggers': False,
+    'formatters':{
+        'verbose':{
+            'format' : "{%(asctime)s] %(levelname)s {%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+    },
+    'handlers':{
+        'file':{
+            'level':'DEBUG',
+            'class':'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'logs', 'mysite-1.log'),
+            'formatter':'verbose'
+        },
+    },
+    'loggers':{
+        'polls':{
+            'handlers':['file'],
+            'level':'DEBUG',
+        },
+    },
+}
