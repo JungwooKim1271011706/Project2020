@@ -1,0 +1,28 @@
+.frame {
+    display:grid;
+    width:100%;
+    height:100%;
+    grid-template-rows: repeat(1, 10fr);
+}
+
+h2 {
+    background-color: cyan;
+    color : red;
+    font-style : red;
+    font-size : 50px;
+}
+
+p {
+    margin : 30px;    
+}
+
+.test {
+    float : right;
+    border : 100px;
+    margin : 0px;
+}
+
+#cs_request_list {
+    width : 100%;
+    
+}

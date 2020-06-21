@@ -54,3 +54,15 @@ h1, h2, h3, h4 {
 .comment {
     margin:20px 0px 20px 20px;
 }
+
+.first_list {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    font-size: 30pt;
+}
+.admin {
+    font-size:12pt;
+    color:gray;
+    float:right;
+    
+}

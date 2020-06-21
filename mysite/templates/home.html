@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>JWKim Django Applications</h2>
-    <ul>
-        {% for key, value in verbose_dict.items %}
-        <li><a href="{% url key|add:':index' %}">{{ value }}</a></li>
-        {% endfor %}
-    </ul>
+    <div>
+        <span>
+            <ul  class='first_list'>
+                {% for key, value in verbose_dict.items %}
+                <li><a href="{% url key|add:':index' %}">{{ value }}</a></li>
+                {% endfor %}
+            </ul>
+        </span>
+    </div>
 {% endblock content %}
