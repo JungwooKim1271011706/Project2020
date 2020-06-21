@@ -43,10 +43,3 @@ companys = ['바로방','퍼니','케어퍼니처']
 
 for i in companys:
     send_sms_csv(i)
-
-
-
-
-# df_퍼니 = df_CS[df_CS.매출처 == '퍼니']
-# df_케어퍼니처 = df_CS[df_CS.매출처 == '케어퍼니처']
-
