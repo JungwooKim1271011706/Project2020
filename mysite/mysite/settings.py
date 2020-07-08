@@ -49,6 +49,15 @@ INSTALLED_APPS = [
     'blog',
 ]
 
+# 2020.07.04 
+# @author eyedi
+# @discription DRF(django-restful-framework) setting, allow anyone
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES' : [
+	    'rest_framework.permission.AllowAny',
+		]
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
