@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'books',
     'blog',
+    'post',
+    'rest_framework',
 ]
 
 # 2020.07.04 
@@ -54,7 +56,7 @@ INSTALLED_APPS = [
 # @discription DRF(django-restful-framework) setting, allow anyone
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES' : [
-	    'rest_framework.permission.AllowAny',
+	    'rest_framework.permissions.AllowAny',
 		]
 }
 
@@ -143,7 +145,7 @@ STATICFILES_DIRS = [
 ]
 
 
-#로그메시지 기록
+# Set logger
 LOGGING = {
     'version' : 1,
     'disable_existing_loggers': False,
