@@ -4,26 +4,34 @@
         {% load static %}
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}" />
-        <title>{% block title %}My Amazing Site{% endblock %}</title>
+        <!-- 2020.07.04 google font change Lobster to Bangers -->
+        <link href="//fonts.googleapis.com/css?family=Bangers&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}" />
+        <title>{% block title %}Mecha-furnihouse{% endblock %}</title>
     </head>
 
 <body>
     <div class='page-header'>
-        <div class='admin'><a href='admin'>관리자 페이지</a></div>
-        <h1><a href="/">Django Applications</a></h1>
+		<div class='admin'><a href='admin'>> Administrator</a></div>
+        <h1><a href="/">Mecha-furnihouse</a></h1>
     </div>
-    <div id="sidebar">
+<!-- 2020.07.04 blocked by eyedi, Not used div
+	<div id="sidebar">
         {% block sidebar %}
         <ul>
             <li><a href="/">Project_Home</a></li>
         </ul>
         {% endblock %}
     </div>
-    <div id="content">
+   
+	<div id="content">
         {% block content %}{% endblock %}
     </div>
- 
+-->
 </body>
+
+<footer class='page-footer'>
+	2020.07.04 Referrenced eyedi & jung
+</footer>
 </html>

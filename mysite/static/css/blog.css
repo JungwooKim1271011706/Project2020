@@ -1,5 +1,5 @@
 .page-header {
-    background-color: #ff9400;
+    background-color: #0F4C81;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
@@ -10,12 +10,21 @@
     text-decoration: none;
 }
 
+.page-footer {
+	background-color: #0F4C81;
+	position: absolute;
+	color: #FFF;
+	bottom: 0;
+	width: 100%;
+	padding: 5px 0px 5px 40px;
+}
+
 .content {
     margin-left: 40px;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Lobster', cursive;
+    font-family: 'Bangers';
 }
 
 .date {
