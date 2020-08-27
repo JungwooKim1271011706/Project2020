@@ -24,5 +24,6 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('books/', include('books.urls')),
     path('blog/', include('blog.urls')),
+    path('api/', include('post.urls')),
     path('accounts/', include('django.contrib.auth.urls')), #로그아웃 페이지 일관되지 않음.
 ]

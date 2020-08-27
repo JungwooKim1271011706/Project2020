@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 myvenv/Lib/site-packages/pip/__pycache__/*.pyc
 myvenv/Lib/site-packages/pip/_internal/__pycache__/*.pyc
 myvenv/Lib/site-packages/pip/_internal/cli/__pycache__/*.pyc
@@ -172,3 +173,13 @@ mysite/mysite/__pycache__/__init__.cpython-37.pyc
 mysite/mysite/__pycache__/settings.cpython-37.pyc
 mysite/mysite/__pycache__/urls.cpython-37.pyc
 mysite/mysite/__pycache__/wsgi.cpython-37.pyc
+=======
+**/settings.json
+**/db.sqlite3
+**/*.pyc
+
+**/migrations
+**/logs
+**/tags
+**/__pycache__
+>>>>>>> 1ad0466f9b7d90cf1c9531733859a2b315f9d186
